@@ -9,9 +9,14 @@
  */
 class Outer{
     private int a=5;
+    void showOuter(){
+        System.out.println("This method in Outer class");
+    }
     class Inner{
         void show(){
             System.out.println("a is private in Outer class "+a);
+            
+            showOuter();
         }
     }
 }
@@ -20,5 +25,6 @@ public class PrivateInnerClass {
         Outer ou = new Outer();
         Outer.Inner innerObject=ou.new Inner();
         innerObject.show();
+       
     }
 }
