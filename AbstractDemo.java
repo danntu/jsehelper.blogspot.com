@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import org.jetbrains.annotations.Contract;
 
-
-/**
- *
- * @author DMyrzaka
- */
 abstract class AbstractWithAbstractMethod{
     abstract int calculate1();
+    @Contract(pure = true)
     static int plus(int a, int b){
         return a+b;
     }
@@ -26,6 +18,7 @@ class AbstractWithoutAbstractMethod extends AbstractWithAbstractMethod{
     public int calculate1(){
         return 10*10;
     }
+    @Contract(pure = true)
     static int max(){
         int t=0;
         return t;
